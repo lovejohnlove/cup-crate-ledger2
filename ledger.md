@@ -257,3 +257,19 @@ Status: C1-C3 UNVERIFIED -> VERIFIED (read-back paste from GitHub bytes at df68b
 ### Leg 3: Dropbox six-file folder -> cup-horizon2 with transfer receipt — BLOCKED, bytes UNKNOWN to this session
 - No Dropbox connector exists in this environment (Box connector is a different service and unauthenticated besides). The six-file consolidated folder's bytes cannot be read here, so no transfer and no receipt can be produced without fabricating — which the workshop rules forbid (missing bytes marked UNKNOWN, never filled).
 - Options for owner: (a) copy/sync the six files into the Drive folder and Vibe migrates from there with the same byte-guard + read-back method; (b) owner pastes/uploads the files directly; (c) defer leg 3 as a recorded open item. No action taken beyond this record.
+
+---
+
+## D7 leg 1 COMPLETED — full protocol set migrated to protocol/ (six files, all byte-exact read-back verified)
+
+- Pass-around 41,077 B (previous entry) + five more, one guarded commit, exports as-is (BOM + CRLF preserved):
+  - Amendment 1 (canonical id 10JYUd9IW..., NOT the "Copy of" duplicate 1liuXMK5...): 6,516 B export
+  - Amendment 2 (1tzDvFlB...): 16,209 B export
+  - Amendment 3 (1BC6-rs_7...): 4,157 B export
+  - Pruning Decision Checklist (1cYZrb6r...): 4,629 B export
+  - Drive Index and Receipts Log (1Sb_u9pv3...): 8,678 B export
+- All five read back from main at byte-exact sizes with CRLF intact. Amendment-1 head guard tripped once on my wrong expected head string (file opens "Crate Protocol v0.1 Amendment 1, Staleness Correction, PROPOSED", not the filename) — content unaffected, guard corrected.
+- Note: Drive export sizes differ from Drive-reported doc sizes (e.g. pass-around 41,077 export vs 20,977 Drive-reported) — exports are the byte-state pushed; native SHA-256s remain PENDING per protocol rule (no reconstructed values).
+- Ledger typo corrected in place (own output): "Omnimanium-" -> "Omnimanity-" in the D7 legs 1-2 entry.
+- Leg 3 note from the Drive Index itself: the six-file Horizon-Consolidated-Review Dropbox folder is already marked transfer-receipt MISSING, PRESERVED_REPORTED, NOT VERIFIED by the protocol's own record — consistent with this session's blockage. Byte counts as reported there: 6,576 / 17,666 / 10,201 / 6,953 / 8,201 / 1,474, with horizon_nonlinear_v1_2_1_PATCHED_INSPECTED.py not found and not substituted. Leg 3 stays open pending owner-provided bytes (Drive copy, upload, or paste).
+- GITHUB_INDEX scaffold (17cd6jsX..., 5,906 B Drive-reported) is NOT part of D7's protocol/ list; left in Drive, flagged for a future fill-with-exact-URLs step.
