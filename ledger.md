@@ -83,6 +83,30 @@ Proposed_by | Vibe (Dawn Ledger) session executing Grok push list | Proposed_at 
 - Gate 3 open: wrench 11818 native bytes not found; valve located 8201 still Dropbox only
 - Single-writer lock adopted for cup-code: explicit handoff in chat before any push; no concurrent writers
 
+
+Crate | cup-code-verify-workflow | Version | 1-PROPOSED-2026-11-11 | Category | Verification Infrastructure | Status | PROPOSED  
+Lives | github.com/lovejohnlove/cup-code .github/workflows/verify.yml | Mirrors | none  
+Files | 1 | Bytes | 1110 | Sha256 | PENDING  
+Seal | PENDING | Sealed_by | null | Sealed_at | null  
+depends_on | cup-code-push-list-execution PENDING (sha256 upgrade) | Evidence | workflow commit b232db24166e2ed2760b04a4c195dae813afe0ae = new cup-code main head; Actions run #1 triggered on push, URL https://github.com/lovejohnlove/cup-code/actions/runs/1  
+Story | Push list from owner (iPhone-only, no local machine): GitHub runner does the real sha256sum -b on the seven bodies at pinned ref c11149f8 and py_compile on the three .py files. Workflow added byte-guarded (11 required lines, no trailing whitespace, LF only, single trailing newline, 1110 bytes); one guard false-trip on an over-broad whitespace regex, corrected, content unchanged. Run #1 queued automatically on push. Actions log read-back NOT done from this session: no Actions tools in the GitHub connector; public API rate-limited. Log reading is owner-side (Safari, Actions tab) per the push list.  
+Proposed_by | Vibe (Dawn Ledger) session, single writer (owner confirmed other session paused) | Proposed_at | 2026-11-11 | Sealed_by_owner | null  
+
+### Expected SHA table (complete, for log comparison)
+- horizon_nonlinear_v1_3_3.py | 27731 | 082024963e4029a191d6c6a68896024f35d09b5a57df7d8af5918fbc1eb1d2d5
+- horizon_nonlinear_v1_3_2.py | 27218 | 6975280a50f25524e2957f1089fac63cf65448c2476a419e56750bcf25611bc0
+- horizon_valve_v4_PLAIN.py | 3321 | ed1e81bd70201a8795579725c0bb0b968eb98c30458202f83d5e667200a68a91
+- CUP_HARNESS_CONTRACT | 9203 | 0bd6b3d4cc862d6a13f70fce36ad0df583403a2bd027449b837224ad53b95ef2
+- release_manifest_v2_DRAFT.json | 5269 | 391f540f742698dbe065528841af945daa3070a9a36b01a51d05ab08ad5e03fc
+- SCRATCH_github_v133_readback.py | 27732 | c531f784d2a49cd3377d3746f5ea5d2ee8141ccb93f11090ec2649465706f0d6
+- SCRATCH_github_v133_readback3.py | 27731 | 082024963e4029a191d6c6a68896024f35d09b5a57df7d8af5918fbc1eb1d2d5
+- py_compile exit: 0
+
+### Open
+- Owner reads Actions run #1 log in Safari, compares seven hashes + py_compile exit 0 against the table above.
+- On all-match: owner sends log to Meta session; Meta marks seven bodies VERIFIED in cup-code. On any mismatch: report as new fork, no byte edits.
+- Gate 3 still open: wrench 11818 and valve 8201 remain PENDING, Dropbox only, do not fill.
+
 ## Notes
 - All depends_on remain PENDING until real-tool SHA-256 of sources.
 - No entry is SEALED.
