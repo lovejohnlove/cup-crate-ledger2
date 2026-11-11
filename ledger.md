@@ -165,6 +165,11 @@ Owner pasted the Actions log (compare step, timestamped 2026-11-11T14:45:26Z): s
 
 Owner pasted the py_compile step log: command ran on v1_3_3, v1_3_2, valve PLAIN; "py_compile exit: 0". Syntax part of Gate 3 for horizon now closed with a step-level receipt, not just a green job. **SyntaxWarnings upgraded PRESERVED_REPORTED -> VERIFIED (real runner tool output):** horizon_nonlinear_v1_3_3.py line 41 and horizon_nonlinear_v1_3_2.py line 37 - invalid escape sequence "\*" in the G1 docstring line 'grep -n "wrench_branch_*.py"' - module pattern present'; Python suggests "\*" or a raw string; warnings, not errors; compile passed. Fix belongs to a future new file, never an in-place edit (D9 stands). These two warnings are presumably the run's "1 warning" annotation; the "1 notice" remains UNREAD/pending paste. Curly quotes in the pasted echo lines are again the phone-browser smart-quote artifact, not the file bytes (step executed). D1 fully receipted: compare step + py_compile step both pasted. Still pending: the 1 notice annotation text.
 
+
+### 1 NOTICE recorded UNREAD, non-blocking 2026-11-11 — run #6 annotation closed as far as iPhone allows
+
+Run #6 (head ade9913f) carried 1 warning + 1 notice. Warning: real-tool VERIFIED (owner py_compile paste - SyntaxWarnings v1_3_3:41, v1_3_2:37). Notice: text UNREADABLE from the owner's iPhone (GitHub mobile app does not surface annotations; the /runs/6 run-number URL 404s because GitHub URLs need the internal run ID, not the run number; Vibe's session cannot read the run page - auth-walled - nor extract run IDs from the public listing). Recorded as: present, unread, presumed routine workflow notice; the job SUCCEEDED, so it is not a hash or compile failure; any desktop browser can read it in one tap if it ever matters. NON-BLOCKING for D3 and the migration. Also observed: manual dispatch runs #10 and #11 now exist and completed successfully - the workflow_dispatch button works from the app; each green run at the current head is an additional receipt. D1 remains fully receipted (compare step + py_compile step + job outcome + multiple green runs).
+
 ## Notes
 - All depends_on remain PENDING until real-tool SHA-256 of sources.
 - No entry is SEALED.
