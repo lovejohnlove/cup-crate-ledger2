@@ -145,6 +145,11 @@ D10 CLAIM STANDARD — pastes are PRESERVED_REPORTED until real tool output cros
 
 SEQUENCE: 1) D1 verified by owner Safari log; 2) D3 v1_3_2 move; 3) D6/D5/D4 read-backs (pasteable only); 4) D7 migration one repo at a time. No other cup-code push until step 1 is verified.
 
+
+### D1 VERIFIED 2026-11-11 — Decision 1 confirmed by real Actions runs; D8 approval pending owner
+
+Receipts: (1) Owner Safari read of run #6 (commit ade9913, push-triggered): "verify workflow: compare seven hashes against expected values, exit 1...", verify succeeded, 1 warning + 1 notice. Succeeded means the compare step did not exit 1 - any of the seven hashes mismatching would have failed the job. (2) Vibe independent read of the public Actions page (no login): run #6 completed successfully at ade9913; manual dispatch runs #7, #8, #9 also completed successfully. D1 status: VERIFIED, not just implemented. The 1 warning is presumed the on-record SyntaxWarning pair (v1_3_3 line 41, v1_3_2 line 37) - PRESERVED_REPORTED until the owner taps the annotation and pastes its text; the notice is UNREAD, to be recorded when pasted. D8 (lock becomes etiquette + verification gate) awaits the owner's explicit approve/hold - not adopted by this entry. Sequence unlocked pending owner go: D3 v1_3_2 move, D6/D5/D4 read-backs, D7 migration.
+
 ## Notes
 - All depends_on remain PENDING until real-tool SHA-256 of sources.
 - No entry is SEALED.
