@@ -237,3 +237,23 @@ Conclusion: scratch1 = v1_3_3 with exactly one 0x0A inserted at byte offset 24, 
 - C3 (INCONCLUSIVE-if-either-input-empty) — line 68: "Gate, v1.3.2: the gate is contained_r only. ... Verdict: PASSED if contained, FAILED if not contained, INCONCLUSIVE if either input is empty."
 - C4 (load_shear_events import-vs-inline) — v1_3_2 import block read back (from __future__ import annotations; argparse, hashlib, ...): NO run_nonlinear import anywhere in the file (grep exit 1). load_shear_events body at line 614-615: "raise NotImplementedError(\"paste load_shear_events from v1_2\")" — the raw stub. C4 stays RULED, PARKED ON BYTES, now CONFIRMED twice by direct byte read (2026-11-11 and this entry at a new head). Per DEFER-DO-NOT-RECONSTRUCT, resolution waits for v1_2 source to surface; no paste can help.
 Status: C1-C3 UNVERIFIED -> VERIFIED (read-back paste from GitHub bytes at df68b213, this entry); C4 UNDECIDED -> CONFIRMED PARKED. D4 RECEIPTED.
+
+---
+
+## D7 legs 1-2 executed (byte-exact, read-back verified); leg 3 BLOCKED — no Dropbox access
+
+### Leg 1: CRATE_PROTOCOL v0.1 -> cup-crate-ledger2 protocol/ — DONE
+- Source: Drive doc 1B3LOEJ_jjmIFvLPOIxvDKOoJonxKCuiwneD8XOYrgxQ (CRATE_PROTOCOL_v0_1_FINAL_PASSAROUND_PROPOSED_2026-11-10.md), downloaded via export text/plain: 41,077 B, md5 295f5757c59c21f915183d98bd3caaa3, three independent downloads identical.
+- Pushed AS-IS (BOM + CRLF Docs-export artifacts preserved, per the Vesper Quill stories precedent) to protocol/CRATE_PROTOCOL_v0_1_FINAL_PASSAROUND_PROPOSED_2026-11-10.md.
+- Read-back at new head: 41,077 B, head/BOM intact, CRLF intact. Status unchanged: PROPOSED, not sealed, not public-promoted (public repo hosts the record; the protocol's own three-tier gate note stands).
+- One guard slip on record: first push attempt failed MY tail guard (expected trailing CRLF; the file ends "act." with no final newline) — content unaffected, guard corrected, second attempt clean.
+
+### Leg 2: The Postcard at the Center of Time -> Omnimanity- stories/ — DONE
+- Source: Drive doc 15LLQRaQPWon6FdN9wGgIkWCTdbYHpfzy0rUTHBmxYeY in 00_STORIES (parent 1AV8ZREoY61Bo0CihmLTiYAJUSV5ykUkU), export text/plain: 6,917 B, md5 c615c061c5c4d3e50ee0447d0c3e4361, BOM + CRLF as-is.
+- Pushed byte-exact to stories/the-postcard-at-the-center-of-time.md. Read-back: 6,917 B, head/tail intact.
+- stories/README.md updated: sixth entry registered, byline "A.I. (Almost Intelligent)" as in the filing note (attribution PRESERVED_REPORTED, not VERIFIED, per the story's own filing note).
+- Story register now six stories live in Omnimanium- (three Dawn Ledger, two Vesper Quill, one A.I. (Almost Intelligent)).
+
+### Leg 3: Dropbox six-file folder -> cup-horizon2 with transfer receipt — BLOCKED, bytes UNKNOWN to this session
+- No Dropbox connector exists in this environment (Box connector is a different service and unauthenticated besides). The six-file consolidated folder's bytes cannot be read here, so no transfer and no receipt can be produced without fabricating — which the workshop rules forbid (missing bytes marked UNKNOWN, never filled).
+- Options for owner: (a) copy/sync the six files into the Drive folder and Vibe migrates from there with the same byte-guard + read-back method; (b) owner pastes/uploads the files directly; (c) defer leg 3 as a recorded open item. No action taken beyond this record.
