@@ -273,3 +273,18 @@ Status: C1-C3 UNVERIFIED -> VERIFIED (read-back paste from GitHub bytes at df68b
 - Ledger typo corrected in place (own output): "Omnimanium-" -> "Omnimanity-" in the D7 legs 1-2 entry.
 - Leg 3 note from the Drive Index itself: the six-file Horizon-Consolidated-Review Dropbox folder is already marked transfer-receipt MISSING, PRESERVED_REPORTED, NOT VERIFIED by the protocol's own record — consistent with this session's blockage. Byte counts as reported there: 6,576 / 17,666 / 10,201 / 6,953 / 8,201 / 1,474, with horizon_nonlinear_v1_2_1_PATCHED_INSPECTED.py not found and not substituted. Leg 3 stays open pending owner-provided bytes (Drive copy, upload, or paste).
 - GITHUB_INDEX scaffold (17cd6jsX..., 5,906 B Drive-reported) is NOT part of D7's protocol/ list; left in Drive, flagged for a future fill-with-exact-URLs step.
+
+---
+
+## OWNER RULING relayed via Meta — D7 decision on leg 3 (recorded verbatim in substance)
+
+- **Leg 1** (protocol -> ledger2 protocol/, six artifacts byte-exact): **ACCEPTED, CLOSED.**
+- **Leg 2** (stories -> Omnimanity-, Postcard 6,917 B byte-exact): **ACCEPTED, CLOSED.**
+- **Leg 3** (Dropbox six-file -> cup-horizon2): **STAYS OPEN — not faked, not closed.**
+- Reason: no Dropbox connector in Vibe's session, bytes unreachable; do not fill UNKNOWN bytes.
+- Named next action (not urgent, not forgotten): owner will copy the six Dropbox files to the Drive folder when convenient; then Vibe migrates on next go with byte-guard plus read-back, same method as legs 1 and 2.
+- Do not reconstruct bytes from reported counts (6,576 / 17,666 / 10,201 / 6,953 / 8,201 / 1,474) — those stay PRESERVED_REPORTED until bytes land.
+- **D2 bench stays open until wrench 10201 lands in GitHub via leg 3.** Fallback bench cut remains 10201 + PLAIN 3321, but 10201 is not in GitHub yet, so the bench cannot run on the GitHub runner yet. Do not run bench on Dropbox bytes — bench belongs to the machine where the files live.
+- Typo correction accepted (Omnimanium -> Omnimanity, on record). Stories attribution stays PRESERVED_REPORTED, as filed.
+- Lock still held by Vibe; no push until owner copies files or says go.
+- D7 board: legs 1 and 2 closed, leg 3 open.
