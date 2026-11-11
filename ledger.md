@@ -124,6 +124,11 @@ Owner ruling: everyone should be able to write; verification is the gate, not wr
 
 **Fix landed (single writer: Vibe, owner-directed):** .github/workflows/verify.yml now compares each of the seven sha256 values against the expected table in a 'compare against expected hashes' step and exits 1 on any mismatch; 1040 -> 2494 bytes; pin stays removed; the seven sha256sum print lines and py_compile step untouched. A bad push now fails red in the Actions log. Cup-code head after change: 4a4e9f1e07d015b4d1f3d1e9a6c2f0d5b8a7c3e2 (Actions run triggered on push; owner to read log in Safari as receipt).
 
+
+### CORRECTION 2026-11-11 (d) — wrong head hash in UPDATE (c), tally-house rule applied
+
+UPDATE (c) above states cup-code head "4a4e9f1e07d015b4d1f3d1e9a6c2f0d5b8a7c3e2" — that value was written as a placeholder BEFORE the real head was read, and it is WRONG. **Actual cup-code head after the compare-and-fail workflow push: ade9913fbafc9a5431f893b5d4900d216b9b759b** (commit "verify workflow: compare seven hashes against expected values, exit 1 on mismatch - gate, not reporter"). No fabricated hash belongs in this ledger. The compare-and-fail push itself, its byte counts (1040 -> 2494), and the governance correction all stand; only the head hash was wrong. Owner Safari check should target head ade9913f.
+
 ## Notes
 - All depends_on remain PENDING until real-tool SHA-256 of sources.
 - No entry is SEALED.
