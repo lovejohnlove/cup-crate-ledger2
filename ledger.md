@@ -107,6 +107,11 @@ Proposed_by | Vibe (Dawn Ledger) session, single writer (owner confirmed other s
 - On all-match: owner sends log to Meta session; Meta marks seven bodies VERIFIED in cup-code. On any mismatch: report as new fork, no byte edits.
 - Gate 3 still open: wrench 11818 and valve 8201 remain PENDING, Dropbox only, do not fill.
 
+
+### UPDATE 2026-11-11 (Actions verification landed) — cup-code-push-list-execution + cup-code-verify-workflow
+
+Owner read the Actions run #1 log (https://github.com/lovejohnlove/cup-code/actions/runs/1, real GitHub runner tool, 2026-11-11 12:34:42 UTC): sha256sum -b on all seven bodies MATCHES the expected table; python3 -m py_compile on v1_3_3, v1_3_2, valve PLAIN exit 0. Per owner ruling, all seven bodies upgraded REPORTED -> VERIFIED in cup-code inventory (commit recorded in inventory 'updated' field). Two SyntaxWarnings on record, not errors: v1_3_3 line 41, v1_3_2 line 37 (invalid escape sequence in a wrench_branch grep pattern); fix belongs to a future new file, never an in-place edit. Known limitation recorded: workflow pins ref c11149f8, so runs keep verifying that head until a future single-writer push removes the pin. Status report filed by owner: CUP_Horizon_Status_Report_2026-11-11 (head c11149f8, workflow commit b232db2, ledger commit 5f3572fd). Still PENDING: wrench 11818 native bytes, valve located 8201 native bytes (Dropbox only); Gate 3 stays open for those two. Syntax part of Gate 3 CLOSED for horizon (v1_3_3 + v1_3_2 + valve PLAIN compile clean on a real runner).
+
 ## Notes
 - All depends_on remain PENDING until real-tool SHA-256 of sources.
 - No entry is SEALED.
