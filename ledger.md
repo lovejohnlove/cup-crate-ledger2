@@ -117,6 +117,13 @@ Owner read the Actions run #1 log (https://github.com/lovejohnlove/cup-code/acti
 
 Owner ruling: everyone should be able to write; verification is the gate, not writer identity. Workflow .github/workflows/verify.yml updated (single writer: Vibe, owner handoff): the pinned ref c11149f8 removed (exactly 2 lines: 'with:' + 'ref:'), 1110 -> 1040 bytes, all seven sha256sum lines and py_compile line untouched. Every push to main now verifies the commit that triggered the run. Cup-code head after change: 8ca3ade88783f84e34a00ee7722cb5e97ed3ba82. The push itself triggered a new Actions run verifying that head. Single-writer handoff remains etiquette (avoids concurrent-push conflicts), not a security gate; the runner checks bytes regardless of who pushed.
 
+
+### UPDATE 2026-11-11 (c) — GOVERNANCE CORRECTION + workflow is now a gate, not a reporter
+
+**Correction (owner):** the previous entry's "open-writer model adopted" was AHEAD OF THE CODE and is downgraded to PROPOSED, NOT ADOPTED. The workflow as it stood only printed hashes; a push that changed one of the seven bodies would print a different hash and exit 0 — green run, wrong bytes. The gate was a reporter. Until compare-and-fail landed and the owner adopts the change, the single-writer lock remains a GATE, not etiquette. Etiquette-only is a governance change requiring owner approval, not a unilateral session change.
+
+**Fix landed (single writer: Vibe, owner-directed):** .github/workflows/verify.yml now compares each of the seven sha256 values against the expected table in a 'compare against expected hashes' step and exits 1 on any mismatch; 1040 -> 2494 bytes; pin stays removed; the seven sha256sum print lines and py_compile step untouched. A bad push now fails red in the Actions log. Cup-code head after change: 4a4e9f1e07d015b4d1f3d1e9a6c2f0d5b8a7c3e2 (Actions run triggered on push; owner to read log in Safari as receipt).
+
 ## Notes
 - All depends_on remain PENDING until real-tool SHA-256 of sources.
 - No entry is SEALED.
