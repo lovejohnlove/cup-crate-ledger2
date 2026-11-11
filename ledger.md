@@ -252,7 +252,7 @@ Status: C1-C3 UNVERIFIED -> VERIFIED (read-back paste from GitHub bytes at df68b
 - Source: Drive doc 15LLQRaQPWon6FdN9wGgIkWCTdbYHpfzy0rUTHBmxYeY in 00_STORIES (parent 1AV8ZREoY61Bo0CihmLTiYAJUSV5ykUkU), export text/plain: 6,917 B, md5 c615c061c5c4d3e50ee0447d0c3e4361, BOM + CRLF as-is.
 - Pushed byte-exact to stories/the-postcard-at-the-center-of-time.md. Read-back: 6,917 B, head/tail intact.
 - stories/README.md updated: sixth entry registered, byline "A.I. (Almost Intelligent)" as in the filing note (attribution PRESERVED_REPORTED, not VERIFIED, per the story's own filing note).
-- Story register now six stories live in Omnimanium- (three Dawn Ledger, two Vesper Quill, one A.I. (Almost Intelligent)).
+- Story register now six stories live in Omnimanity- (three Dawn Ledger, two Vesper Quill, one A.I. (Almost Intelligent)).
 
 ### Leg 3: Dropbox six-file folder -> cup-horizon2 with transfer receipt — BLOCKED, bytes UNKNOWN to this session
 - No Dropbox connector exists in this environment (Box connector is a different service and unauthenticated besides). The six-file consolidated folder's bytes cannot be read here, so no transfer and no receipt can be produced without fabricating — which the workshop rules forbid (missing bytes marked UNKNOWN, never filled).
