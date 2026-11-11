@@ -175,3 +175,20 @@ Run #6 (head ade9913f) carried 1 warning + 1 notice. Warning: real-tool VERIFIED
 - No entry is SEALED.
 - Inventory JSON must agree with this ledger or LEDGER_DRIFT is raised.
 - current/ remains empty.
+
+---
+
+# Ledger entry — D3 executed: v1_3_2 moves current/ -> historical/ (cup-code)
+
+- Date: 2026-11-11. Writer: Vibe (Dawn Ledger), single writer, owner-approved full authority.
+- Owner Decision 3: v1_3_2 moves from current/ to historical/ in lovejohnlove/cup-code; pointer left; no deletion, no history rewrite.
+- cup-code commit: df68b2137fdc80b7b0d687666af5a34aed0a4356 (new head; previous ade9913fbafc9a5431f893b5d4900d216b9b759b).
+- Files in commit:
+  - historical/horizon-v1_3_2-27218/horizon_nonlinear_v1_3_2.py — byte-exact move. Read-back at df68b213: 27218 bytes, GitHub blob sha a65b8661d9136d96245b6bee9b843a831c928e59 (identical to pre-move blob — proof of byte preservation), sha256 6975280a50f25524e2957f1089fac63cf65448c2476a419e56750bcf25611bc0 (VERIFIED, Actions run #6 + owner log paste).
+  - historical/horizon-v1_3_2-27218/STATUS.md — new, records move, hashes, blob preservation, BENCH-PENDING status.
+  - current/horizon-v1_3_2-27218/MOVED.md — pointer: directory is a pointer, not a copy; current/ holds only v1_3_3 for horizon.
+  - .github/workflows/verify.yml — three path lines updated current/ -> historical/ for v1_3_2 (sha256sum print line, compare check line, py_compile line); +9 bytes total, 2494 -> 2503, guard-verified. Pin stays removed. All seven expected hashes and py_compile untouched.
+- Guard slips during execution (recorded honestly): attempt 1 manual transcription 122 bytes short (27096 != 27218), abandoned; attempt 2 wrong workflow-length guard (+18 assumed vs correct +9), content unaffected; attempt 3 pushed clean.
+- Note: the original current/horizon-v1_3_2-27218/ body and STATUS.md were NOT deleted (no delete capability used); MOVED.md coexists with them. Recorded as known; true deletion would need an owner-approved follow-up.
+- Verification pending: Actions run triggered by df68b213 must show seven OK lines and py_compile exit 0 at the new paths. Owner checks in Chrome app; log paste upgrades this entry to fully verified.
+- Status: WORKSHOP, PROPOSED, NOT SEALED.
