@@ -288,3 +288,21 @@ Status: C1-C3 UNVERIFIED -> VERIFIED (read-back paste from GitHub bytes at df68b
 - Typo correction accepted (Omnimanium -> Omnimanity, on record). Stories attribution stays PRESERVED_REPORTED, as filed.
 - Lock still held by Vibe; no push until owner copies files or says go.
 - D7 board: legs 1 and 2 closed, leg 3 open.
+
+---
+
+## D7 leg 3 EXECUTED — Dropbox six-file folder landed via Drive, migrated to cup-horizon2 with transfer receipt (head 7e3304ed)
+
+- Owner copied the six files from the Dropbox Horizon-Consolidated-Review folder to Drive (2026-11-11 ~19:29-19:40 UTC); Vibe downloaded, byte-guarded, pushed to cup-horizon2 historical/dropbox-six-file-2026-11-10/ in one commit (7e3304ed), with TRANSFER_RECEIPT.md closing the receipt gap the Drive Index marked MISSING.
+- Read-back: all six byte-exact at the new head. Blobs: wrench 9dfbe294, valve-8201 5bf31bdd, v1_3_1 59fdba90, caliper 837c9630, contract c8f2d534, notion manifest 8c4436f1.
+- Count cross-check vs the Drive Index reported counts (PRESERVED_REPORTED until now):
+  - back_off_wrench_v0_4_located.py 10,201 = MATCH (md5 5c136680, first real pin)
+  - horizon_valve_v4.py (located) 8,201 = MATCH (md5 c475ed49, first real pin)
+  - horizon_nonlinear_v1_3_1.py 17,666 = MATCH (md5 9696562e, first real pin)
+  - phase_space_caliper_v3_1_1_located.py 6,953 = MATCH (md5 11fac960, first real pin)
+  - notion_10k_manifest_final.json 1,474 = MATCH (md5 34d6c5a9, first real pin)
+  - CUP_HARNESS_CONTRACT.md 6,576 reported vs **6,621 landed — MISMATCH +45**. Recorded as its own byte-state (contract-6621, md5 593e72c4), flagged, not reconciled, not explained by assumption. Content observed: v0.1 structure with Section 3.1 layer-(b) requirements, UNRESOLVED_HASH_CONTRACT deferral, dt_eff formula, INCONCLUSIVE-if-either-empty — i.e. pre-(g) shape (no valve-pairing rows). The 6,576 draft state stays historical; contract-9203 stays the current VERIFIED contract in cup-code.
+- horizon_nonlinear_v1_2_1_PATCHED_INSPECTED.py: NOT FOUND in the folder, not substituted — still MISSING per standing rule.
+- All six: no BOM, LF endings, pushed as-is. Status PRESERVED (md5 INSPECTED this transfer); sha256 PENDING real tool; nothing promoted to VERIFIED by migration.
+- **D2 gate update:** wrench 10201 is now IN GITHUB (cup-horizon2), satisfying the owner's condition "bench cannot run on the GitHub runner until 10201 lands via leg 3." Remaining before any bench: (a) owner decision to extend the cup-code verify workflow (or another runner config) to include the new byte-states — a new crate, not this migration; (b) real-tool sha256s for the six new bodies; (c) the bench cut itself (10201 + PLAIN 3321) is owner-side to run. Nothing benched here; no workflow touched.
+- D7 board: legs 1, 2, 3 ALL CLOSED (leg 3 closed by executed transfer + receipt, exactly as the owner's ruling specified).
