@@ -192,3 +192,12 @@ Run #6 (head ade9913f) carried 1 warning + 1 notice. Warning: real-tool VERIFIED
 - Note: the original current/horizon-v1_3_2-27218/ body and STATUS.md were NOT deleted (no delete capability used); MOVED.md coexists with them. Recorded as known; true deletion would need an owner-approved follow-up.
 - Verification pending: Actions run triggered by df68b213 must show seven OK lines and py_compile exit 0 at the new paths. Owner checks in Chrome app; log paste upgrades this entry to fully verified.
 - Status: WORKSHOP, PROPOSED, NOT SEALED.
+
+---
+
+## Addendum — runner log paste received, but from a PRE-D3 head (D3 receipt still pending)
+
+- Owner pasted a sha256sum step log (runner timestamp 2026-11-11T18:35:58Z). **All seven hashes match the expected table** — including v1_3_2 6975280a... and the duplicate pair 08202496... (v1_3_3 = scratch3). Real-tool receipt for the bytes.
+- **But the log's paths show current/horizon-v1_3_2-27218/...** — the pre-D3 layout. The workflow at head df68b213 (read back: 2,503 B) says historical/ on all three v1_3_2 lines. Conclusion: this log is from a run triggered before the D3 push (likely a manual dispatch), not the D3 run.
+- D3 receipt requirement unchanged: the log of the run triggered by df68b213, whose sha256sum step prints historical/horizon-v1_3_2-27218/.... Both layouts hash identical bytes (old current/ copies were not deleted), so the D3 run is expected green.
+- Workflow read-back at df68b213 re-confirmed: line 14 sha256sum historical/..., line 35 check historical/..., line 44 py_compile includes historical/horizon-v1_3_2-27218/....
