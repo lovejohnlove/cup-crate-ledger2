@@ -150,6 +150,11 @@ SEQUENCE: 1) D1 verified by owner Safari log; 2) D3 v1_3_2 move; 3) D6/D5/D4 rea
 
 Receipts: (1) Owner Safari read of run #6 (commit ade9913, push-triggered): "verify workflow: compare seven hashes against expected values, exit 1...", verify succeeded, 1 warning + 1 notice. Succeeded means the compare step did not exit 1 - any of the seven hashes mismatching would have failed the job. (2) Vibe independent read of the public Actions page (no login): run #6 completed successfully at ade9913; manual dispatch runs #7, #8, #9 also completed successfully. D1 status: VERIFIED, not just implemented. The 1 warning is presumed the on-record SyntaxWarning pair (v1_3_3 line 41, v1_3_2 line 37) - PRESERVED_REPORTED until the owner taps the annotation and pastes its text; the notice is UNREAD, to be recorded when pasted. D8 (lock becomes etiquette + verification gate) awaits the owner's explicit approve/hold - not adopted by this entry. Sequence unlocked pending owner go: D3 v1_3_2 move, D6/D5/D4 read-backs, D7 migration.
 
+
+### D8 ADOPTED 2026-11-11 — owner approval recorded
+
+Owner ruling, explicit: APPROVE. With D1 VERIFIED (passing run #6 at head ade9913f with compare-and-fail), the single-writer lock becomes ETIQUETTE + VERIFICATION GATE from this entry forward: handoff in chat before a push remains courtesy to avoid concurrent-push conflicts, but the binding gate is the workflow, which checks BYTES not WRITERS — any writer's bad push fails red in the public Actions log. No session may reverse this without a new owner decision, recorded here. Sequence unlocked: D3 (v1_3_2 to historical/ with pointer), D6/D5/D4 read-backs (pasteable only), D7 migration one repo at a time. Cup-code pushes still proceed one at a time with the Actions run checked per head.
+
 ## Notes
 - All depends_on remain PENDING until real-tool SHA-256 of sources.
 - No entry is SEALED.
