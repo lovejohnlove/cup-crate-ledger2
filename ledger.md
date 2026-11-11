@@ -211,3 +211,29 @@ Run #6 (head ade9913f) carried 1 warning + 1 notice. Warning: real-tool VERIFIED
 - D3 status: WORKSHOP -> RECEIPTED. Byte-exact move proven three ways: identical GitHub blob (a65b8661) before and after, identical sha256 (6975280a) at the new path on a real runner, and the compare gate passing at the new paths.
 - Prior addendum resolved: the 18:35 log was a pre-D3 dispatch receipt (7/7 at old paths); the 18:47 log is the D3-head receipt. Both on file.
 - Optional remaining paste: the py_compile line from this same run (expected exit 0, with the two on-record SyntaxWarnings) — not blocking; D1 already receipted py_compile at step level.
+
+---
+
+## D6 + D5 + D4 read-backs executed — all three closed with real tool output on GitHub bytes at head df68b213
+
+Method: three bodies + contract fetched from cup-code main at df68b213 with byte guards (27731/27218/27732/9203, blobs 65a84afd / a65b8661 / 6970ad45 / 56a245ba), written to disk mechanically, then diffed/grep'd with real tools. No transcription anywhere.
+
+### D6 CLOSED — the 513-byte delta story (diff -u v1_3_2 -> v1_3_3, real diff, exit 1)
+The delta is EXACTLY the flat fill, in two hunks, nothing else:
+- Hunk 1 (docstring, ~line 34): the stub-list line "Stubs remaining (V1_2_PRESERVED): evaluate_single_event, load_shear_events" replaced by a five-line note: load_shear_events remains the only stub; evaluate_single_event filled v1_3.3 per owner flat ruling 2026-11-10 (returns 1.0 if event in window else 0.0; else unreachable given upstream filtering, defensively correct; 0.85 stays logged as placeholder, not enforced; gate is contained_r only).
+- Hunk 2 (code, ~line 549): evaluate_single_event body "raise NotImplementedError(\"paste evaluate_single_event from v1_2\")" replaced by the four-line FLAT comment + "return 1.0 if event in window else 0.0".
+Story paragraph: v1_3_3 is v1_3_2 with one decision applied. The 513 bytes are the paper trail of the flat ruling landing: a comment block in the header saying what changed and why, and the two-line implementation it describes. No other byte in either file differs. The version bump from _3_2 to _3_3 exists to make that one ruled change addressable; the diff proves the bump carries nothing smuggled.
+
+### D5 CLOSED — the 27732 fork is NAMED: single-newline-after-shebang fork
+Note: cmp and dd are unavailable in this environment, and tail -c +N here means "last N bytes" (a tooling slip on record: an intermediate md5 mismatch was my own offset error, retracted). Answer obtained by od + byte-surgery:
+- od: scratch1 bytes 1-24 = "#!/usr/bin/env python3\n\n"; v1_3_3 bytes 1-24 = "#!/usr/bin/env python3\n\"" — byte 24 is 0x0A in scratch1, 0x22 in v1_3_3.
+- Byte-surgery: scratch1 bytes 25..27732 vs v1_3_3 bytes 24..27731 (both 27,708 B) — md5 IDENTICAL (03e9a39b9327647adecd9b0270a52e41), diff EMPTY.
+- diff -u scratch1 v1_3_3: single hunk "2d1" (delete one blank line). Nothing else.
+Conclusion: scratch1 = v1_3_3 with exactly one 0x0A inserted at byte offset 24, immediately after the shebang. Vibe's shebang-claim is upgraded PRESERVED_REPORTED -> VERIFIED (mechanical byte evidence). Fork nature: FORMATTING-ONLY, single inserted newline; no semantic delta. It remains a separate byte-state (27732, blob 6970ad45) and is not v1_3_3.
+
+### D4 CLOSED — read-back pastes from the contract at head df68b213 (9,203 B, blob 56a245ba)
+- C1 (UNRESOLVED_HASH_CONTRACT deferral) — line 16: "TensionEvent | index, kind, magnitude, detail, confidence | kind in PHASE_SHEAR, JACOBIAN_SPIKE, CRYPTO_SHEAR, MALFORMED_RECORD | UNRESOLVED_HASH_CONTRACT is deferred to wrench v0.5, not in v1.3.2 gate"; also line 66 in Section 5: "UNRESOLVED_HASH_CONTRACT | valve._compute_hash absent | magnitude inf | deferred to wrench v0.5, not in v1.3.2 gate".
+- C2 (complete dt_eff formula) — line 25: "state.dt_eff | 0.01 divided by 1 plus 0.1 times blowup x | float".
+- C3 (INCONCLUSIVE-if-either-input-empty) — line 68: "Gate, v1.3.2: the gate is contained_r only. ... Verdict: PASSED if contained, FAILED if not contained, INCONCLUSIVE if either input is empty."
+- C4 (load_shear_events import-vs-inline) — v1_3_2 import block read back (from __future__ import annotations; argparse, hashlib, ...): NO run_nonlinear import anywhere in the file (grep exit 1). load_shear_events body at line 614-615: "raise NotImplementedError(\"paste load_shear_events from v1_2\")" — the raw stub. C4 stays RULED, PARKED ON BYTES, now CONFIRMED twice by direct byte read (2026-11-11 and this entry at a new head). Per DEFER-DO-NOT-RECONSTRUCT, resolution waits for v1_2 source to surface; no paste can help.
+Status: C1-C3 UNVERIFIED -> VERIFIED (read-back paste from GitHub bytes at df68b213, this entry); C4 UNDECIDED -> CONFIRMED PARKED. D4 RECEIPTED.
