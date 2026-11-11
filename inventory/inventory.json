@@ -1,0 +1,45 @@
+{
+  "status": "PROPOSED",
+  "generated_by": "GRK session",
+  "generated_at": "2026-11-10T14:55:00Z",
+  "migrated_to_public": "2026-11-11",
+  "limitation": "All native Drive SHA-256 PENDING. Hashes of exports or pastes are not seals.",
+  "entries": [
+    {
+      "path": "historical/pass-around-2026-11-10/",
+      "role": "historical PROPOSED",
+      "byte_count": "PENDING (native)",
+      "hash_status": "PENDING",
+      "evidence_status": "PRESERVED_REPORTED",
+      "fork_of": null,
+      "depends_on": []
+    },
+    {
+      "path": "historical/amendment-1-2026-11-10/",
+      "role": "historical PROPOSED",
+      "byte_count": "PENDING (native)",
+      "hash_status": "PENDING",
+      "evidence_status": "PRESERVED_REPORTED",
+      "fork_of": null,
+      "depends_on": ["crate-protocol-v0.1-pass-around"]
+    },
+    {
+      "path": "historical/amendment-2-2026-11-10/",
+      "role": "historical PROPOSED",
+      "byte_count": "PENDING (native)",
+      "hash_status": "PENDING",
+      "evidence_status": "PRESERVED_REPORTED",
+      "fork_of": null,
+      "depends_on": ["crate-protocol-v0.1-amendment-1"]
+    },
+    {
+      "path": "historical/combined-amendments-1-2-2026-11-10/",
+      "role": "historical PROPOSED (convenience)",
+      "byte_count": "of paste text",
+      "hash_status": "of paste only",
+      "evidence_status": "PRESERVED_REPORTED",
+      "fork_of": null,
+      "depends_on": ["the three source amendments"]
+    }
+  ]
+}
