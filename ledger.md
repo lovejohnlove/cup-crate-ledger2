@@ -155,6 +155,11 @@ Receipts: (1) Owner Safari read of run #6 (commit ade9913, push-triggered): "ver
 
 Owner ruling, explicit: APPROVE. With D1 VERIFIED (passing run #6 at head ade9913f with compare-and-fail), the single-writer lock becomes ETIQUETTE + VERIFICATION GATE from this entry forward: handoff in chat before a push remains courtesy to avoid concurrent-push conflicts, but the binding gate is the workflow, which checks BYTES not WRITERS — any writer's bad push fails red in the public Actions log. No session may reverse this without a new owner decision, recorded here. Sequence unlocked: D3 (v1_3_2 to historical/ with pointer), D6/D5/D4 read-backs (pasteable only), D7 migration one repo at a time. Cup-code pushes still proceed one at a time with the Actions run checked per head.
 
+
+### LOG PASTE RECEIVED 2026-11-11T14:45:26Z — compare step: all seven hashes match
+
+Owner pasted the Actions log (compare step, timestamped 2026-11-11T14:45:26Z): seven OK lines, each actual sha256 EQUAL to the expected table value (08202496... v1_3_3 / 6975280a... v1_3_2 / ed1e81bd... valve PLAIN / 0bd6b3d4... contract / 391f540f... manifest / c531f784... scratch1 / 08202496... scratch3), final line "all seven hashes match". The compare gate executed against real runner bytes and passed. Paste-class note, recorded honestly: the echoed script lines in the paste show curly quotes (smart-quote substitution by the phone browser during copy); the executed step passed, so the workflow file's own quotes are straight - the artifact is in the paste, not the bytes. Still not yet pasted: the py_compile step output line (exit 0) and the run's 1 warning + 1 notice annotation texts. D1 remains VERIFIED (run #6 + this paste); py_compile receipt and annotation texts to be pasted when convenient.
+
 ## Notes
 - All depends_on remain PENDING until real-tool SHA-256 of sources.
 - No entry is SEALED.
