@@ -129,6 +129,22 @@ Owner ruling: everyone should be able to write; verification is the gate, not wr
 
 UPDATE (c) above states cup-code head "4a4e9f1e07d015b4d1f3d1e9a6c2f0d5b8a7c3e2" — that value was written as a placeholder BEFORE the real head was read, and it is WRONG. **Actual cup-code head after the compare-and-fail workflow push: ade9913fbafc9a5431f893b5d4900d216b9b759b** (commit "verify workflow: compare seven hashes against expected values, exit 1 on mismatch - gate, not reporter"). No fabricated hash belongs in this ledger. The compare-and-fail push itself, its byte counts (1040 -> 2494), and the governance correction all stand; only the head hash was wrong. Owner Safari check should target head ade9913f.
 
+
+### OWNER DECISIONS 1-10, 2026-11-11 — DECIDED by delegated authority; each amendable by a new crate on new evidence; missing bytes marked UNKNOWN, never filled
+
+D1 WORKFLOW COMPARE-AND-FAIL REQUIRED — pin stays removed; workflow must compare hashes and exit 1 on mismatch. STATUS: IMPLEMENTED at cup-code head ade9913fbafc9a5431f893b5d4900d216b9b759b (2494-byte verify.yml read back from main: pin absent, 7 inline expected hashes, exit 1 on mismatch, sha256sum print step + py_compile kept). Single-writer lock REMAINS A GATE until the owner reads the Actions run log for ade9913f in Safari. A bad push must show red.
+D2 GATE 3 FALLBACK ADOPTED — bench cut = wrench 10201 + valve PLAIN 3321 (native, VERIFIED). Wrench 11818 and valve 8201 stay PENDING/UNKNOWN, Dropbox only, background search, NOT blockers. Gate 3 open until bench run on 10201+3321 returns expected result incl. exit 3 on stub path. Found-later bytes enter as a NEW crate/bench cut, never an edit.
+D3 V1_3_2 PLACEMENT — moves current/ -> historical/ in cup-code with pointer file in current/ (moved, not deleted, history not rewritten). Single writer, AFTER D1 is verified by Actions log, not before. After the move current/ holds only v1_3_3.
+D4 CONTRACT — 9203 is current, download wins, VERIFIED; 8393 preserved as historical/contract-8393-Drive-reported with source noted. C1-C3 UNVERIFIED until a read-back pastes exact lines from 9203. C4 UNDECIDED until a read-back pastes the import line from v1_3_2. No guessing.
+D5 1-BYTE FORK — SCRATCH 27732 stays separate from v1_3_3 27731, VERIFIED, nature UNNAMED pending cmp -l output. Vibe's shebang-difference statement is PRESERVED_REPORTED, not VERIFIED. One writer runs cmp -l and pastes the byte.
+D6 V1_3_3 STORY UNKNOWN — 513-byte delta not invented. One writer runs diff -u v1_3_2 v1_3_3 and writes one paragraph (what changed, which open items addressed, stubs still stubs yes/no, bench target yes/no); paragraph enters this ledger as a new entry.
+D7 MIGRATION — GitHub becomes the complete working home, one repo at a time, single writer, originals preserved: protocol pass-around + Amendments 1-3 + Pruning Checklist + Drive Index -> cup-crate-ledger2 protocol/; stories (incl. The Postcard at the Center of Time) -> Omni-080 stories/; Dropbox six-file Horizon-Consolidated-Review -> cup-horizon2 historical with transfer receipt; Dropbox folder frozen, not deleted. No bulk move.
+D8 GOVERNANCE — single writer stays a gate until D1 is verified; then etiquette + verification gate (workflow checks bytes, not writers). No session changes this unilaterally; owner approval required, recorded here.
+D9 SYNTAXWARNINGS STAY OPEN — v1_3_3 line 41, v1_3_2 line 37; fix in a future new file, never in-place.
+D10 CLAIM STANDARD — pastes are PRESERVED_REPORTED until real tool output crosses; Actions logs checked in Safari per new head, not trusted from paste; agreement is not verification; verification is not seal; sealed is not reality.
+
+SEQUENCE: 1) D1 verified by owner Safari log; 2) D3 v1_3_2 move; 3) D6/D5/D4 read-backs (pasteable only); 4) D7 migration one repo at a time. No other cup-code push until step 1 is verified.
+
 ## Notes
 - All depends_on remain PENDING until real-tool SHA-256 of sources.
 - No entry is SEALED.
