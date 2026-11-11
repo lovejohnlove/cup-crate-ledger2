@@ -201,3 +201,13 @@ Run #6 (head ade9913f) carried 1 warning + 1 notice. Warning: real-tool VERIFIED
 - **But the log's paths show current/horizon-v1_3_2-27218/...** — the pre-D3 layout. The workflow at head df68b213 (read back: 2,503 B) says historical/ on all three v1_3_2 lines. Conclusion: this log is from a run triggered before the D3 push (likely a manual dispatch), not the D3 run.
 - D3 receipt requirement unchanged: the log of the run triggered by df68b213, whose sha256sum step prints historical/horizon-v1_3_2-27218/.... Both layouts hash identical bytes (old current/ copies were not deleted), so the D3 run is expected green.
 - Workflow read-back at df68b213 re-confirmed: line 14 sha256sum historical/..., line 35 check historical/..., line 44 py_compile includes historical/horizon-v1_3_2-27218/....
+
+---
+
+## D3 receipt CLOSED — runner log at the D3 head confirms the move end-to-end
+
+- Owner pasted the sha256sum step log of the run triggered by the D3 push (runner timestamp 2026-11-11T18:47:37Z, head df68b213). **The v1_3_2 line reads historical/horizon-v1_3_2-27218/horizon_nonlinear_v1_3_2.py** — the workflow is checking the body at its new home — and the hash matches the expected table: 6975280a50f25524e2957f1089fac63cf65448c2476a419e56750bcf25611bc0.
+- All seven lines match expected: 08202496 (v1_3_3, current/), 6975280a (v1_3_2, historical/), ed1e81bd (valve PLAIN), 0bd6b3d4 (contract 9203), 391f540f (manifest), c531f784 (scratch1), 08202496 (scratch3 = v1_3_3 duplicate).
+- D3 status: WORKSHOP -> RECEIPTED. Byte-exact move proven three ways: identical GitHub blob (a65b8661) before and after, identical sha256 (6975280a) at the new path on a real runner, and the compare gate passing at the new paths.
+- Prior addendum resolved: the 18:35 log was a pre-D3 dispatch receipt (7/7 at old paths); the 18:47 log is the D3-head receipt. Both on file.
+- Optional remaining paste: the py_compile line from this same run (expected exit 0, with the two on-record SyntaxWarnings) — not blocking; D1 already receipted py_compile at step level.
