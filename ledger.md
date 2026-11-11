@@ -174,7 +174,7 @@ Run #6 (head ade9913f) carried 1 warning + 1 notice. Warning: real-tool VERIFIED
 - All depends_on remain PENDING until real-tool SHA-256 of sources.
 - No entry is SEALED.
 - Inventory JSON must agree with this ledger or LEDGER_DRIFT is raised.
-- current/ remains empty.
+- current/ holds only horizon-v1_3_3 for horizon (v1_3_2 moved to historical/ per D3, commit df68b213; MOVED.md pointer coexists with the not-yet-deleted original copies).
 
 ---
 
