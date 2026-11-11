@@ -160,6 +160,11 @@ Owner ruling, explicit: APPROVE. With D1 VERIFIED (passing run #6 at head ade991
 
 Owner pasted the Actions log (compare step, timestamped 2026-11-11T14:45:26Z): seven OK lines, each actual sha256 EQUAL to the expected table value (08202496... v1_3_3 / 6975280a... v1_3_2 / ed1e81bd... valve PLAIN / 0bd6b3d4... contract / 391f540f... manifest / c531f784... scratch1 / 08202496... scratch3), final line "all seven hashes match". The compare gate executed against real runner bytes and passed. Paste-class note, recorded honestly: the echoed script lines in the paste show curly quotes (smart-quote substitution by the phone browser during copy); the executed step passed, so the workflow file's own quotes are straight - the artifact is in the paste, not the bytes. Still not yet pasted: the py_compile step output line (exit 0) and the run's 1 warning + 1 notice annotation texts. D1 remains VERIFIED (run #6 + this paste); py_compile receipt and annotation texts to be pasted when convenient.
 
+
+### LOG PASTE RECEIVED 2026-11-11T14:45:26Z (b) — py_compile exit 0; SyntaxWarnings now real-tool VERIFIED
+
+Owner pasted the py_compile step log: command ran on v1_3_3, v1_3_2, valve PLAIN; "py_compile exit: 0". Syntax part of Gate 3 for horizon now closed with a step-level receipt, not just a green job. **SyntaxWarnings upgraded PRESERVED_REPORTED -> VERIFIED (real runner tool output):** horizon_nonlinear_v1_3_3.py line 41 and horizon_nonlinear_v1_3_2.py line 37 - invalid escape sequence "\*" in the G1 docstring line 'grep -n "wrench_branch_*.py"' - module pattern present'; Python suggests "\*" or a raw string; warnings, not errors; compile passed. Fix belongs to a future new file, never an in-place edit (D9 stands). These two warnings are presumably the run's "1 warning" annotation; the "1 notice" remains UNREAD/pending paste. Curly quotes in the pasted echo lines are again the phone-browser smart-quote artifact, not the file bytes (step executed). D1 fully receipted: compare step + py_compile step both pasted. Still pending: the 1 notice annotation text.
+
 ## Notes
 - All depends_on remain PENDING until real-tool SHA-256 of sources.
 - No entry is SEALED.
