@@ -329,3 +329,23 @@ Status: C1-C3 UNVERIFIED -> VERIFIED (read-back paste from GitHub bytes at df68b
 - **Vibe byte-diagnosis of the compile failure (PRESERVED_REPORTED until log paste confirms):** back_off_wrench_v0_4_located.py has a SyntaxError at line 3 — its header prose (lines 3-18: "File: back_off_wrench.py", "Version: v0.4...", etc.) is BARE TEXT, not wrapped in a docstring. The valve located 8201 opens the same style of header correctly with triple-quote on line 3; the wrench is missing its opening triple-quote. First code line is "from typing..." at line 20. py_compile hits "File: back_off_wrench.py" as a syntax error immediately. valve, v1_3_1, caliper inspected — no equivalent defect found (valve docstring opens line 3; v1_3_1 shebang+docstring; caliper comment+import).
 - **Classification:** this is a defect in the LOCATED WRENCH 10201 BYTE-STATE itself, not a migration defect (bytes pushed as-is; count matched the reported 10,201). The wrench was never py_compiled before — F2 history (2026-11-10 (b)) noted "compilation not verified" for the 10201 wrench; this run is the first real-tool compile attempt and it failed. Per D9 discipline: no in-place fix; any repair is a NEW file/new crate with owner ruling.
 - **Board unchanged per owner's standing rules:** D7 leg 3 PRESERVED_REPORTED (sha256 pins printed but unread without log paste; compile step red); D8 GATE; D9/D10 UNDEFINED; D2 bench blocked pending wrench resolution (the fallback bench cut includes wrench 10201 — it now needs either a repaired NEW byte-state or an owner ruling on how a non-compiling wrench affects the bench cut).
+
+---
+
+## D8 — OWNER RULING, 2026-11-12: single-writer lock changed from GATE to ETIQUETTE PLUS VERIFICATION GATE
+
+Relayed via Grok handoff (Grok timed out for today; lock was Vibe's for D8 only). Owner go recorded; filed as written, no edits.
+
+**Old D8:** single-writer lock is a GATE, not etiquette, until owner explicitly approves change. Only one writer holds lock, no push without owner go.
+
+**New D8, ruled now:** single-writer lock is etiquette plus verification gate.
+- **Etiquette:** writers announce intent and claim the file or crate; do not overwrite; do not delete; do not edit in place — correction is a new crate; forks are preserved; no silent mutation; no Doc rendering as source; no reconstructed bytes.
+- **Verification gate:** no file is VERIFIED without runner SHA-256 match plus py_compile or validate; no file is SEALED without owner seal; no file is CANONICAL without owner ruling; no bench without runner verification. Multiple writers may work in parallel on different crates as long as they follow etiquette and the verification gate, and do not touch the same file at the same time without announcing.
+
+**Board reference (owner, after Grok):** D7 six bodies VERIFIED (Run 4, six SHA-256s match pins; Runs 14, 15 re-confirmed); D7 repair 10710 VERIFIED (Runs 8, 14, 15; SHA-256 cb22db5b; py_compile exit 0; NOT_CANONICAL, no seal); D2 bench VERIFIED (Run 15; repair 10710 + PLAIN 3321; SHA-256 ed1e81bd; bench_smoke exit 0; ledger filed); D8 now etiquette plus verification gate by explicit owner ruling 2026-11-12; D9, D10 still UNDEFINED.
+
+**Scope guards:** the D8 change itself seals nothing; repair stays NOT_CANONICAL; 10201 untouched as historical defective; 10675 drift preserved as distinct byte-state (SHA-256 32367cce); no change to D7 or D2 status; no new root STATUS.md — this ledger is the governance home.
+
+**Correction accepted on record:** Vibe's wrench diagnosis said SyntaxError at line 3; the runner's actual error was line 4, the arrow character — imprecise on Vibe's part, root cause identical (header prose not wrapped in a docstring); the repair fixed it by adding the delimiters.
+
+**Status: FILED as PROPOSED-to-VERIFIED by owner go; no Actions run needed (this ledger has no workflow).** After this filing, the lock returns to etiquette mode — no single writer holds it; Vibe, Grok, and Gemini may work in parallel under etiquette plus the verification gate, with no push of any other crate without owner go.
